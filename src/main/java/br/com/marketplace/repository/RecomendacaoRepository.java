@@ -2,13 +2,13 @@ package br.com.marketplace.repository;
 
 import org.springframework.stereotype.Repository;
 
-import br.com.marketplace.model.Recomendacao;
+import br.com.marketplace.model.DadosRecomendacao;
 
 import org.springframework.data.repository.CrudRepository;
 
 @Repository
-public interface RecomendacaoRepository extends CrudRepository<Recomendacao, Integer>{
+public interface RecomendacaoRepository extends CrudRepository<DadosRecomendacao, Integer>{
 	
-	void SaveOrUpdateEvent(Recomendacao recomendacao);
+//	void save(DadosRecomendacao recomendacao);
 	
 }
