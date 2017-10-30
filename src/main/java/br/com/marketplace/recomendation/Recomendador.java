@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class Recomendador {
 
 	public DataModel getModeloDeProdutos() throws IOException {
-		return getModelo("src/main/resources/teste.csv");
+		return getModelo("src/main/resources/dadosRecomendacao.csv");
 				
 	}
 

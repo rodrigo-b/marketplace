@@ -1,11 +1,16 @@
 package br.com.marketplace.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.junit.Ignore;
+import org.springframework.data.repository.NoRepositoryBean;
 
 @Entity
 @Table(name="tb_dados_recomendacao")
@@ -27,6 +32,8 @@ public class DadosRecomendacao {
 	
 	@Column(name="VEZES_COMPRADO")
 	private Long vezesComprado;
+	
+	
 	public DadosRecomendacao() {
 
 	}
@@ -82,7 +89,8 @@ public class DadosRecomendacao {
 
 	public void setVezesComprado(Long vezesComprado) {
 		this.vezesComprado = vezesComprado;
-	}
+	}	
+	
 
 	public boolean equals(Object obj) {
 

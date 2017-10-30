@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.marketplace.model.DadosRecomendacao;
+import br.com.marketplace.model.DadosRecomendacaoView;
 import br.com.marketplace.recomendation.RecomendaProdutos;
 import br.com.marketplace.service.RecomendacaoService;
 import br.com.marketplace.util.EscreveArquivo;
@@ -42,12 +43,16 @@ public class RecomendacaoController {
 	}
 	
 	@RequestMapping(value ="/saveDadosRecomendacao", method = RequestMethod.POST)
-	public ResponseEntity saveDadosRecomendacao(@RequestBody DadosRecomendacao dados)
+	public ResponseEntity saveDadosRecomendacao(@RequestBody DadosRecomendacaoView dados)
 	{
 		try{
+			
+			
+			
 		DadosRecomendacao dadosRecomendacao = new DadosRecomendacao();	
 		dadosRecomendacao.setIdCliente(dados.getIdCliente());
-		dadosRecomendacao.setIdProduto(dados.getIdProduto());
+		List<Integer> list = dados.getIdProdutoList();
+		dadosRecomendacao.setIdProduto(dados.getIdProdutoList().get(0));
 		dadosRecomendacao.setNota(dados.getNota());
 		
 		escreveArquivo.escreveArquivoCsv(dadosRecomendacao);
